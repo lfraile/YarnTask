@@ -1,0 +1,22 @@
+{
+  "name": "yarntask",
+  "version": "1.0.0",
+  "description": "A simple task for using Yarn package restore",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lfraile/YarnTask.git"
+  },
+  "author": "Luis Fraile",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lfraile/YarnTask/issues"
+  },
+  "homepage": "https://github.com/lfraile/YarnTask#readme",
+  "dependencies": {
+    "vsts-task-lib": "^0.9.20"
+  }
+}

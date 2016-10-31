@@ -1,0 +1,64 @@
+{
+    "id": "DCB1BA6D-4031-48EB-839D-CFB54F4A75CA",
+    "name": "yarn",
+    "friendlyName": "Yarn Demo",
+    "description": "Run a yarn command",
+    "helpMarkDown": "Just a simple demo task for Yarn the fantabulous new package manager",
+    "category": "Package",
+    "author": "Luis Fraile",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 2
+    },
+    "demands": [
+        "yarn"
+    ],
+    "minimumAgentVersion": "1.91.0",
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "instanceNameFormat": "yarn $(command)",    
+    "inputs": [
+        {
+            "name": "command",
+            "type": "string",
+            "label": "Command",
+            "defaultValue": "install",
+            "helpMarkDown": "yarn command to run. [More Information](https://yarnpkg.com/).",
+            "required": true
+        },
+        {
+            "name": "arguments",
+            "type": "string",
+            "label": "Arguments",
+            "defaultValue": "",
+            "helpMarkDown": "Additional arguments passed to yarn.",
+            "required": false
+        },
+        {
+            "name": "cwd",
+            "type": "filePath",
+            "label": "Working Directory",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Current working directory where yarn command is run.  Defaults to the root of the repo.",
+            "groupName": "advanced"
+        }
+    ],
+    "execution": {
+        "Node": {
+            "target": "yarntask.js",
+            "argumentFormat": ""
+        }
+    },
+    "messages": {
+        "InvalidCommand": "Only one command should be used for yarn. Use arguments input for additional arguments.",
+        "YarnReturnCode": "yarn exited with return code: %d",
+        "YarnFailed": "yarn failed with error: %s"
+    }
+}
